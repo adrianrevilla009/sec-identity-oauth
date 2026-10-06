@@ -1,0 +1,7 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          # JWKS from the keycloak-oidc-pkce realm; fetched lazily, so startup works offline
+          jwk-set-uri: http://localhost:8080/realms/orders/protocol/openid-connect/certs

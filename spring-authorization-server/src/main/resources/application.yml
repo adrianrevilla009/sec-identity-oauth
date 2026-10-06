@@ -1,0 +1,16 @@
+server:
+  port: 9000
+spring:
+  security:
+    oauth2:
+      authorizationserver:
+        issuer: http://localhost:9000
+        client:
+          orders-service:
+            registration:
+              client-id: orders-service
+              # lab-only secret, stored with the noop encoder
+              client-secret: "{noop}lab-secret"
+              client-authentication-methods: client_secret_basic
+              authorization-grant-types: client_credentials
+              scopes: orders.read

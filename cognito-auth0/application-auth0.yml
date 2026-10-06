@@ -1,0 +1,10 @@
+# Spring resource-server config for Auth0 (profile: auth0). Not runnable here: needs a real tenant.
+# Cost: Auth0's free plan is enough; delete the API and application when done.
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://example.eu.auth0.com/
+          # Auth0 puts the API identifier in `aud`; the issuer alone does not check it, so list it here.
+          audiences: https://orders.example/api

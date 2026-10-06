@@ -1,0 +1,8 @@
+# Spring resource-server config for Amazon Cognito (profile: cognito). Not runnable here: needs a real user pool.
+# Cost: Cognito's free tier covers the first 10,000 monthly active users; delete the pool when done.
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://cognito-idp.eu-west-1.amazonaws.com/eu-west-1_EXAMPLE
